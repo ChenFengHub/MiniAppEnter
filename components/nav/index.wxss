@@ -1,0 +1,21 @@
+/* components/nav/index.wxss */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 600rpx;
+  height: 80rpx;
+  background-color: #f7f7f7;
+  border-radius: 2px;
+}
+
+.icon{
+    height:80rpx;
+    width:80rpx;
+  }
+  
+  .title{
+    font-size:28rpx;
+  }
