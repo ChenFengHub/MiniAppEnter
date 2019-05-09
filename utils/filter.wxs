@@ -1,0 +1,21 @@
+var format = function(text) {
+    if(!text){
+        // 这个函数必须判空，因为可能传入空值 text，导致 text.replace 报错。
+        // 尤其该函数传入的是绑定的数据。页面初始化时，会传入一次初始值；后续才是传入更新的值
+        return
+    }
+    var reg = getRegExp('\\\\n','g')  // 匹配双反斜杠n,要标识斜杠，必须转义，否则是转义符
+    return text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+}
+
+/**
+ * 截取数组的长度。目前短评中的数据不应该全部显示，应该只截取其中一部分
+ */
+var limit = function(array, len) {
+    return array.slice (0, len)
+}
+
+module.exports = {
+    format:format,
+    limit: limit
+}
