@@ -2,6 +2,9 @@
 import {
   BookModel
 } from '../../models/book.js'
+import {
+  random
+} from '../../utils/common.js'
 
 const bookModel = new BookModel()
 
@@ -11,7 +14,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    books:{}
+    books:[],
+    searching: false,
+    more: ''
   },
 
   /**
@@ -75,5 +80,32 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  /**
+   * 关闭搜索框
+   */
+  onCancel(event) {
+    this.setData({
+      searching : false
+    })
+  },
+
+  /**
+   * 打开搜索框
+   */
+  onOpen(event) {
+    this.setData({
+      searching : true
+    })
+  },
+
+  /**
+   * 页面拉到最后触发的事件，用于分页加载
+   */
+  onReachBottom() {
+    this.setData({
+      more:random(16)
+    })
   }
 })

@@ -1,6 +1,4 @@
-import {
-  HTTP
-} from '../utils/http-p.js'
+import { HTTP } from '../utils/http-p.js'
 
 class BookModel extends HTTP {
   /**
@@ -9,6 +7,21 @@ class BookModel extends HTTP {
   getHotList() {
     return this.request({
       url: 'book/hot_list'
+    })
+  }
+
+  /**
+   * 搜索书籍方法
+   */
+  search(q, start) {
+    return this.request({
+      url: 'book/search',
+      data: {
+        q,
+        start,
+        count: 20, // 每页条数，默认：20
+        summary: 0 // 0-完整内容（默认）；1-简介
+      }
     })
   }
 
@@ -45,7 +58,7 @@ class BookModel extends HTTP {
    */
   getComments(bid) {
     return this.request({
-        url: `book/${bid}/short_comment`
+      url: `book/${bid}/short_comment`
     })
   }
 
@@ -62,9 +75,6 @@ class BookModel extends HTTP {
       }
     })
   }
-
 }
 
-export {
-  BookModel
-}
+export { BookModel }
