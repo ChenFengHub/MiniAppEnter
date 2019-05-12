@@ -48,6 +48,9 @@ Component({
    */
   methods: {
     loadMore(newVal, oldVal, changedPath) {
+      this._loadMore(newVal)
+    },
+    _loadMore(event) {
       if (!this.data.bookName) {
         // 初始会触发此，此时不应该加载
         return

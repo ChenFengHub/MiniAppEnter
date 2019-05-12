@@ -136,12 +136,12 @@
 .like-container {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-around;
     width: 100rpx;
 }
 .like {
-    margin-right: 30rpx;
-    margin-top: 10rpx;
+    margin-left: 10rpx;
+    margin-top: 40rpx;
 }
 
 .posting-container {
@@ -196,3 +196,13 @@
 .shadow {
     color: #999;
 }
+
+.share-btn {
+    margin-top: 28rpx;
+    margin-left: 10rpx;
+  }
+
+  .share {
+    width: 40rpx;
+    height: 40rpx;
+  }

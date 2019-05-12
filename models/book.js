@@ -30,7 +30,7 @@ class BookModel extends HTTP {
    */
   getMyBookCount() {
     return this.request({
-      url: '/book/favor/count'
+      url: 'book/favor/count'
     })
   }
 
@@ -73,6 +73,15 @@ class BookModel extends HTTP {
         book_id: bid,
         content: comment
       }
+    })
+  }
+
+  /**
+   * 获取我喜欢的书籍总数
+   */
+  getMyBookCount() {
+    return this.request({
+      url: '/book/favor/count'
     })
   }
 }

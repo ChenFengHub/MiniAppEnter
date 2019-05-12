@@ -11,10 +11,10 @@ class HTTP {
     return new Promise((resolve, reject)=>{
       this._request(url, resolve, reject, data, method)
     })
-    
+
   }
 
-  // 
+  //
   _request(url, resolve, reject, data = {}, method = 'GET') {
     wx.request({
       "url": config.api_base_url + url,
